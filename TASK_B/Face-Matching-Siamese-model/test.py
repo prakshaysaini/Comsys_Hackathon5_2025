@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 IMAGE_SIZE = (100, 100)
-THRESHOLD = 82  # from validation
+THRESHOLD = 82  # Best threshhold found using "taskb-get_threshold_with_random_pairs.ipynb"
 
 def preprocess_image(img_path):
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
@@ -73,7 +73,8 @@ def generate_all_pairs(img_to_id):
 def evaluate(model, pairs):
     y_true = []
     y_pred = []
-
+    #samples=10000                                                                       #uncomment for sampled evaluation to save time
+    #count=1                                                                             #uncomment for sampled evaluation to save time
     for img1, img2, label in tqdm(pairs, desc="Evaluating"):
         emb1 = get_embedding(model, img1)
         emb2 = get_embedding(model, img2)
@@ -81,6 +82,9 @@ def evaluate(model, pairs):
         pred = 1 if dist < THRESHOLD else 0
         y_true.append(label)
         y_pred.append(pred)
+        #if count % samples == 0:                                                       #uncomment for sampled evaluation to save time
+        #    break                                                                      #uncomment for sampled evaluation to save time
+        #count += 1           # Limit to samples pairs for faster evaluation            #uncomment for sampled evaluation to save time
         
     acc = accuracy_score(y_true, y_pred)
     prec = precision_score(y_true, y_pred)
