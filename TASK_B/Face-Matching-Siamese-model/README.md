@@ -112,19 +112,19 @@ def build_siamese_model(input_shape):
 
 | Metric     | Value     |
 |------------|-----------|
-| Accuracy   | `0.8212`  |
+| Accuracy   | `0.9514`  |
 | Precision  | `1.0000`  |
-| Recall     | `0.8212`  |
-| F1-Score   | `0.9018`  |
+| Recall     | `0.9514`  |
+| F1-Score   | `0.9751`  |
 
 ## 🎯 Evaluation Metrics (on validation)
 
 | Metric     | Value     |
 |------------|-----------|
-| Accuracy   | `0.7792`  |
+| Accuracy   | `0.9298`  |
 | Precision  | `1.0000`  |
-| Recall     | `0.7792`  |
-| F1-Score   | `0.8759`  |
+| Recall     | `0.9298`  |
+| F1-Score   | `0.9636`  |
 
 > _Automatically computed by `test.py` on sampled dataset for saving time
 
