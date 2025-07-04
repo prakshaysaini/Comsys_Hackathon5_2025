@@ -7,7 +7,7 @@ from tensorflow.keras.models import load_model
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
 
 IMAGE_SIZE = (100, 100)
-THRESHOLD = 64.33  # from validation
+THRESHOLD = 82  # from validation
 
 def preprocess_image(img_path):
     img = cv2.imread(img_path, cv2.IMREAD_GRAYSCALE)
