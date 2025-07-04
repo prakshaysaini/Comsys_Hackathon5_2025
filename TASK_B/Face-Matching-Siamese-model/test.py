@@ -94,8 +94,8 @@ def evaluate(model, pairs):
     print(f"✅ F1 Score : {f1:.4f}")
 
 def main():
-    test_data_path=r"E:\comsys_2025\Comys_Hackathon5\Task_B\train"
-    model_path = r"taskb_siamese_embedding.h5"
+    test_data_path=r"E:\comsys_2025\Comys_Hackathon5\Task_B\train"                                                 #path for data
+    model_path = r"E:\Comsys_Hackathon5_2025\TASK_B\Face-Matching-Siamese-model\taskb_siamese_embedding.h5"        #path for embedding model
     print("📦 Loading model...")
     model = load_model(model_path)
 
